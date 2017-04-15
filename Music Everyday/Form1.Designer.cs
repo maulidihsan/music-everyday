@@ -72,7 +72,9 @@
             this.checkBoxAccoust = new System.Windows.Forms.CheckBox();
             this.btnSeed = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.timerToken = new System.Windows.Forms.Timer(this.components);
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbPopularity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbInstrument)).BeginInit();
@@ -269,6 +271,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Enabled = false;
             this.label7.Location = new System.Drawing.Point(6, 150);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 13);
@@ -277,6 +280,7 @@
             // 
             // tbPopularity
             // 
+            this.tbPopularity.Enabled = false;
             this.tbPopularity.Location = new System.Drawing.Point(100, 150);
             this.tbPopularity.Name = "tbPopularity";
             this.tbPopularity.Size = new System.Drawing.Size(151, 45);
@@ -285,6 +289,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Enabled = false;
             this.label6.Location = new System.Drawing.Point(6, 118);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(86, 13);
@@ -293,6 +298,7 @@
             // 
             // tbInstrument
             // 
+            this.tbInstrument.Enabled = false;
             this.tbInstrument.Location = new System.Drawing.Point(100, 118);
             this.tbInstrument.Name = "tbInstrument";
             this.tbInstrument.Size = new System.Drawing.Size(151, 45);
@@ -300,6 +306,7 @@
             // 
             // tbEnergy
             // 
+            this.tbEnergy.Enabled = false;
             this.tbEnergy.Location = new System.Drawing.Point(100, 83);
             this.tbEnergy.Name = "tbEnergy";
             this.tbEnergy.Size = new System.Drawing.Size(151, 45);
@@ -308,6 +315,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Enabled = false;
             this.label5.Location = new System.Drawing.Point(6, 83);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 13);
@@ -316,6 +324,7 @@
             // 
             // tbDance
             // 
+            this.tbDance.Enabled = false;
             this.tbDance.Location = new System.Drawing.Point(100, 52);
             this.tbDance.Name = "tbDance";
             this.tbDance.Size = new System.Drawing.Size(151, 45);
@@ -324,6 +333,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Enabled = false;
             this.label4.Location = new System.Drawing.Point(6, 51);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 13);
@@ -333,6 +343,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Enabled = false;
             this.label3.Location = new System.Drawing.Point(6, 19);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 13);
@@ -341,6 +352,7 @@
             // 
             // tbAccoust
             // 
+            this.tbAccoust.Enabled = false;
             this.tbAccoust.Location = new System.Drawing.Point(100, 19);
             this.tbAccoust.Name = "tbAccoust";
             this.tbAccoust.Size = new System.Drawing.Size(151, 45);
@@ -348,7 +360,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(342, 573);
+            this.textBox1.Location = new System.Drawing.Point(25, 664);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(291, 20);
             this.textBox1.TabIndex = 18;
@@ -395,6 +407,7 @@
             this.checkBoxPop.Size = new System.Drawing.Size(15, 14);
             this.checkBoxPop.TabIndex = 17;
             this.checkBoxPop.UseVisualStyleBackColor = true;
+            this.checkBoxPop.CheckedChanged += new System.EventHandler(this.checkBoxPop_CheckedChanged);
             // 
             // checkBoxInstrument
             // 
@@ -404,6 +417,7 @@
             this.checkBoxInstrument.Size = new System.Drawing.Size(15, 14);
             this.checkBoxInstrument.TabIndex = 16;
             this.checkBoxInstrument.UseVisualStyleBackColor = true;
+            this.checkBoxInstrument.CheckedChanged += new System.EventHandler(this.checkBoxInstrument_CheckedChanged);
             // 
             // checkBoxEnergy
             // 
@@ -413,6 +427,7 @@
             this.checkBoxEnergy.Size = new System.Drawing.Size(15, 14);
             this.checkBoxEnergy.TabIndex = 15;
             this.checkBoxEnergy.UseVisualStyleBackColor = true;
+            this.checkBoxEnergy.CheckedChanged += new System.EventHandler(this.checkBoxEnergy_CheckedChanged);
             // 
             // checkBoxDance
             // 
@@ -422,6 +437,7 @@
             this.checkBoxDance.Size = new System.Drawing.Size(15, 14);
             this.checkBoxDance.TabIndex = 14;
             this.checkBoxDance.UseVisualStyleBackColor = true;
+            this.checkBoxDance.CheckedChanged += new System.EventHandler(this.checkBoxDance_CheckedChanged);
             // 
             // checkBoxAccoust
             // 
@@ -431,6 +447,7 @@
             this.checkBoxAccoust.Size = new System.Drawing.Size(15, 14);
             this.checkBoxAccoust.TabIndex = 13;
             this.checkBoxAccoust.UseVisualStyleBackColor = true;
+            this.checkBoxAccoust.CheckedChanged += new System.EventHandler(this.checkBoxAccoust_CheckedChanged);
             // 
             // btnSeed
             // 
@@ -438,12 +455,13 @@
             this.btnSeed.Name = "btnSeed";
             this.btnSeed.Size = new System.Drawing.Size(75, 23);
             this.btnSeed.TabIndex = 14;
-            this.btnSeed.Text = "Seed";
+            this.btnSeed.Text = "Send";
             this.btnSeed.UseVisualStyleBackColor = true;
             this.btnSeed.Click += new System.EventHandler(this.btnSeed_Click);
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.listView2);
             this.groupBox2.Controls.Add(this.btnSeed);
             this.groupBox2.Location = new System.Drawing.Point(369, 12);
@@ -453,15 +471,34 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Seed Data";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 34);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(123, 13);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "Up To 5 Sample Songs :";
+            // 
             // timerToken
             // 
-            this.timerToken.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timerToken.Tick += new System.EventHandler(this.timerToken_Tick);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(25, 542);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(67, 13);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "Debug Stuff:";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 741);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.btnMoveLeft);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.groupBox3);
@@ -482,6 +519,7 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -532,6 +570,8 @@
         private System.Windows.Forms.CheckBox checkBoxDance;
         private System.Windows.Forms.CheckBox checkBoxAccoust;
         private System.Windows.Forms.Timer timerToken;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
     }
 }
 
