@@ -16,7 +16,7 @@ namespace Music_Everyday
 {
     public partial class Form1 : Form
     {
-        string credentials = "dfe0e6a795634db3a099e739de690f48:56addc812a8d40aabf7d318ea3b33f01";
+        string credentials = "{YOUR API CREDENTIALS}";
         string access_token;
         public Form1()
         {
@@ -49,9 +49,14 @@ namespace Music_Everyday
 
         public bool GetSong(string artis, string judul)
         {
-            if (artis == "")
+            if (artis == "" && judul == "")
             {
-                artis = "*";
+                MessageBox.Show("Masukkan artis dan judul", "Error", MessageBoxButtons.OK);
+                return false;
+            }
+            else if (artis == "")
+            {
+                judul = "*";
             }
             else if (judul == "")
             {
@@ -97,9 +102,10 @@ namespace Music_Everyday
                 string url = "https://api.spotify.com/v1/recommendations?";
                 foreach(ListViewItem item in listView2.Items)
                 {
-                    url = url + "seed_tracks=" + item.SubItems[3].Text + "&";
+                    url += "seed_tracks=" + item.SubItems[3].Text + "&";
                 }
                 url = url.Remove(url.Length-1);
+                url += GetSetting();
                 string data = client.DownloadString(url);
                 JObject obj = JObject.Parse(data);
                 foreach (var item in obj["tracks"])
@@ -150,18 +156,21 @@ namespace Music_Everyday
 
         }
 
-        private void btnPindah_Click(object sender, EventArgs e)
+        private void btnMoveRight_Click(object sender, EventArgs e)
         {
-            while (listView1.SelectedItems.Count > 0)
+            while (listView1.SelectedItems.Count > 0 && listView2.Items.Count < 5)
             {
                 ListViewItem temp = listView1.SelectedItems[0];
                 listView1.Items.Remove(temp);
                 listView2.Items.Add(temp);
+                temp = null;
             }
+            listView2.SelectedItems.Clear();
         }
 
         private void btnSeed_Click(object sender, EventArgs e)
         {
+            listView3.Items.Clear();
             if (!GetAccessToken())
             {
                 MessageBox.Show("Gagal Mendapatkan Access Token", "Gagal", MessageBoxButtons.OK);
@@ -171,6 +180,57 @@ namespace Music_Everyday
             {
                 MessageBox.Show("Gagal Mencari Rekomendasi", "Gagal", MessageBoxButtons.OK);
             }
+        }
+
+        private void btnMoveLeft_Click(object sender, EventArgs e)
+        {
+            while (listView2.SelectedItems.Count > 0)
+            {
+                ListViewItem temp = listView2.SelectedItems[0];
+                listView2.Items.Remove(temp);
+                listView1.Items.Insert(0, temp);
+            }
+            listView1.SelectedItems.Clear();
+        }
+
+        public string GetSetting()
+        {
+            string set_url = "";
+            if (checkBoxAccoust.Checked)
+            {
+                int accoustic = tbAccoust.Value / 10;
+                set_url = set_url + "&target_accousticness=" + accoustic.ToString();
+            }
+
+            if (checkBoxDance.Checked)
+            {
+                int dance = tbDance.Value / 10;
+                set_url = set_url + "&target_danceability=" + dance.ToString();
+            }
+
+            if (checkBoxEnergy.Checked)
+            {
+                int energy = tbEnergy.Value / 10;
+                set_url = set_url + "&target_energy=" + energy.ToString();
+            }
+
+            if (checkBoxInstrument.Checked)
+            {
+                int instrument = tbInstrument.Value / 10;
+                set_url = set_url + "&target_instrumentalness=" + instrument.ToString();
+            }
+
+            if (checkBoxPop.Checked)
+            {
+                int popular = tbPopularity.Value * 10;
+                set_url = set_url + "&target_popularity=" + popular.ToString();
+            }
+            return set_url;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
         }
     }
 }
