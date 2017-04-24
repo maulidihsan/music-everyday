@@ -52,37 +52,34 @@
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label7 = new System.Windows.Forms.Label();
-            this.tbPopularity = new System.Windows.Forms.TrackBar();
-            this.label6 = new System.Windows.Forms.Label();
-            this.tbInstrument = new System.Windows.Forms.TrackBar();
-            this.tbEnergy = new System.Windows.Forms.TrackBar();
-            this.label5 = new System.Windows.Forms.Label();
-            this.tbDance = new System.Windows.Forms.TrackBar();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.tbAccoust = new System.Windows.Forms.TrackBar();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnMoveLeft = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.checkBoxPop = new System.Windows.Forms.CheckBox();
-            this.checkBoxInstrument = new System.Windows.Forms.CheckBox();
-            this.checkBoxEnergy = new System.Windows.Forms.CheckBox();
-            this.checkBoxDance = new System.Windows.Forms.CheckBox();
-            this.checkBoxAccoust = new System.Windows.Forms.CheckBox();
             this.btnSeed = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnPreference = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.timerToken = new System.Windows.Forms.Timer(this.components);
             this.label8 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.adLabel = new System.Windows.Forms.Label();
+            this.progressBarSong = new System.Windows.Forms.ProgressBar();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pbTrack = new System.Windows.Forms.PictureBox();
+            this.btnPause = new System.Windows.Forms.Button();
+            this.btnPlay = new System.Windows.Forms.Button();
+            this.btnConnect = new System.Windows.Forms.Button();
+            this.lblTimeTrack = new System.Windows.Forms.Label();
+            this.lblJudul = new System.Windows.Forms.Label();
+            this.lblArtis = new System.Windows.Forms.Label();
+            this.lblAlbum = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbPopularity)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbInstrument)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbEnergy)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbDance)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbAccoust)).BeginInit();
-            this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTrack)).BeginInit();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // textArtist
@@ -140,7 +137,7 @@
             this.groupBox1.Size = new System.Drawing.Size(311, 207);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Cari Lagu";
+            this.groupBox1.Text = "1. Cari Lagu";
             // 
             // listView1
             // 
@@ -180,7 +177,7 @@
             // 
             // txtHasil
             // 
-            this.txtHasil.Location = new System.Drawing.Point(26, 558);
+            this.txtHasil.Location = new System.Drawing.Point(69, 629);
             this.txtHasil.Multiline = true;
             this.txtHasil.Name = "txtHasil";
             this.txtHasil.Size = new System.Drawing.Size(242, 100);
@@ -241,9 +238,9 @@
             this.columnHeader8});
             this.listView3.FullRowSelect = true;
             this.listView3.GridLines = true;
-            this.listView3.Location = new System.Drawing.Point(18, 239);
+            this.listView3.Location = new System.Drawing.Point(6, 19);
             this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(293, 250);
+            this.listView3.Size = new System.Drawing.Size(321, 341);
             this.listView3.TabIndex = 15;
             this.listView3.UseCompatibleStateImageBehavior = false;
             this.listView3.View = System.Windows.Forms.View.Details;
@@ -268,99 +265,9 @@
             this.columnHeader8.Text = "ID";
             this.columnHeader8.Width = 0;
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Enabled = false;
-            this.label7.Location = new System.Drawing.Point(6, 150);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 13);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "Popularity";
-            // 
-            // tbPopularity
-            // 
-            this.tbPopularity.Enabled = false;
-            this.tbPopularity.Location = new System.Drawing.Point(100, 150);
-            this.tbPopularity.Name = "tbPopularity";
-            this.tbPopularity.Size = new System.Drawing.Size(151, 45);
-            this.tbPopularity.TabIndex = 8;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Enabled = false;
-            this.label6.Location = new System.Drawing.Point(6, 118);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(86, 13);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Instrumentalness";
-            // 
-            // tbInstrument
-            // 
-            this.tbInstrument.Enabled = false;
-            this.tbInstrument.Location = new System.Drawing.Point(100, 118);
-            this.tbInstrument.Name = "tbInstrument";
-            this.tbInstrument.Size = new System.Drawing.Size(151, 45);
-            this.tbInstrument.TabIndex = 6;
-            // 
-            // tbEnergy
-            // 
-            this.tbEnergy.Enabled = false;
-            this.tbEnergy.Location = new System.Drawing.Point(100, 83);
-            this.tbEnergy.Name = "tbEnergy";
-            this.tbEnergy.Size = new System.Drawing.Size(151, 45);
-            this.tbEnergy.TabIndex = 5;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Enabled = false;
-            this.label5.Location = new System.Drawing.Point(6, 83);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Energy";
-            // 
-            // tbDance
-            // 
-            this.tbDance.Enabled = false;
-            this.tbDance.Location = new System.Drawing.Point(100, 52);
-            this.tbDance.Name = "tbDance";
-            this.tbDance.Size = new System.Drawing.Size(151, 45);
-            this.tbDance.TabIndex = 3;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Enabled = false;
-            this.label4.Location = new System.Drawing.Point(6, 51);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 13);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Danceability";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Enabled = false;
-            this.label3.Location = new System.Drawing.Point(6, 19);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 13);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Accousticness";
-            // 
-            // tbAccoust
-            // 
-            this.tbAccoust.Enabled = false;
-            this.tbAccoust.Location = new System.Drawing.Point(100, 19);
-            this.tbAccoust.Name = "tbAccoust";
-            this.tbAccoust.Size = new System.Drawing.Size(151, 45);
-            this.tbAccoust.TabIndex = 0;
-            // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(25, 664);
+            this.textBox1.Location = new System.Drawing.Point(325, 629);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(291, 20);
             this.textBox1.TabIndex = 18;
@@ -375,80 +282,6 @@
             this.btnMoveLeft.UseVisualStyleBackColor = true;
             this.btnMoveLeft.Click += new System.EventHandler(this.btnMoveLeft_Click);
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.checkBoxPop);
-            this.groupBox3.Controls.Add(this.checkBoxInstrument);
-            this.groupBox3.Controls.Add(this.checkBoxEnergy);
-            this.groupBox3.Controls.Add(this.checkBoxDance);
-            this.groupBox3.Controls.Add(this.checkBoxAccoust);
-            this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.tbPopularity);
-            this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.tbInstrument);
-            this.groupBox3.Controls.Add(this.tbEnergy);
-            this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.tbDance);
-            this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.tbAccoust);
-            this.groupBox3.Location = new System.Drawing.Point(374, 239);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(274, 250);
-            this.groupBox3.TabIndex = 17;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Setting";
-            // 
-            // checkBoxPop
-            // 
-            this.checkBoxPop.AutoSize = true;
-            this.checkBoxPop.Location = new System.Drawing.Point(257, 150);
-            this.checkBoxPop.Name = "checkBoxPop";
-            this.checkBoxPop.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxPop.TabIndex = 17;
-            this.checkBoxPop.UseVisualStyleBackColor = true;
-            this.checkBoxPop.CheckedChanged += new System.EventHandler(this.checkBoxPop_CheckedChanged);
-            // 
-            // checkBoxInstrument
-            // 
-            this.checkBoxInstrument.AutoSize = true;
-            this.checkBoxInstrument.Location = new System.Drawing.Point(257, 118);
-            this.checkBoxInstrument.Name = "checkBoxInstrument";
-            this.checkBoxInstrument.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxInstrument.TabIndex = 16;
-            this.checkBoxInstrument.UseVisualStyleBackColor = true;
-            this.checkBoxInstrument.CheckedChanged += new System.EventHandler(this.checkBoxInstrument_CheckedChanged);
-            // 
-            // checkBoxEnergy
-            // 
-            this.checkBoxEnergy.AutoSize = true;
-            this.checkBoxEnergy.Location = new System.Drawing.Point(257, 83);
-            this.checkBoxEnergy.Name = "checkBoxEnergy";
-            this.checkBoxEnergy.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxEnergy.TabIndex = 15;
-            this.checkBoxEnergy.UseVisualStyleBackColor = true;
-            this.checkBoxEnergy.CheckedChanged += new System.EventHandler(this.checkBoxEnergy_CheckedChanged);
-            // 
-            // checkBoxDance
-            // 
-            this.checkBoxDance.AutoSize = true;
-            this.checkBoxDance.Location = new System.Drawing.Point(257, 51);
-            this.checkBoxDance.Name = "checkBoxDance";
-            this.checkBoxDance.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxDance.TabIndex = 14;
-            this.checkBoxDance.UseVisualStyleBackColor = true;
-            this.checkBoxDance.CheckedChanged += new System.EventHandler(this.checkBoxDance_CheckedChanged);
-            // 
-            // checkBoxAccoust
-            // 
-            this.checkBoxAccoust.AutoSize = true;
-            this.checkBoxAccoust.Location = new System.Drawing.Point(257, 19);
-            this.checkBoxAccoust.Name = "checkBoxAccoust";
-            this.checkBoxAccoust.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxAccoust.TabIndex = 13;
-            this.checkBoxAccoust.UseVisualStyleBackColor = true;
-            this.checkBoxAccoust.CheckedChanged += new System.EventHandler(this.checkBoxAccoust_CheckedChanged);
-            // 
             // btnSeed
             // 
             this.btnSeed.Location = new System.Drawing.Point(205, 34);
@@ -461,6 +294,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnPreference);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.listView2);
             this.groupBox2.Controls.Add(this.btnSeed);
@@ -469,7 +303,17 @@
             this.groupBox2.Size = new System.Drawing.Size(295, 207);
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Seed Data";
+            this.groupBox2.Text = "2. Kirim Sampel Lagu";
+            // 
+            // btnPreference
+            // 
+            this.btnPreference.Location = new System.Drawing.Point(205, 10);
+            this.btnPreference.Name = "btnPreference";
+            this.btnPreference.Size = new System.Drawing.Size(75, 23);
+            this.btnPreference.TabIndex = 16;
+            this.btnPreference.Text = "Preferences";
+            this.btnPreference.UseVisualStyleBackColor = true;
+            this.btnPreference.Click += new System.EventHandler(this.btnPreference_Click);
             // 
             // label9
             // 
@@ -487,39 +331,188 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(25, 542);
+            this.label8.Location = new System.Drawing.Point(66, 613);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(67, 13);
             this.label8.TabIndex = 20;
             this.label8.Text = "Debug Stuff:";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.lblAlbum);
+            this.groupBox3.Controls.Add(this.lblArtis);
+            this.groupBox3.Controls.Add(this.lblJudul);
+            this.groupBox3.Controls.Add(this.lblTimeTrack);
+            this.groupBox3.Controls.Add(this.adLabel);
+            this.groupBox3.Controls.Add(this.progressBarSong);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Controls.Add(this.pbTrack);
+            this.groupBox3.Controls.Add(this.btnPause);
+            this.groupBox3.Controls.Add(this.btnPlay);
+            this.groupBox3.Controls.Add(this.btnConnect);
+            this.groupBox3.Location = new System.Drawing.Point(352, 239);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(312, 366);
+            this.groupBox3.TabIndex = 21;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Music Player";
+            // 
+            // adLabel
+            // 
+            this.adLabel.AutoSize = true;
+            this.adLabel.Location = new System.Drawing.Point(138, 237);
+            this.adLabel.Name = "adLabel";
+            this.adLabel.Size = new System.Drawing.Size(38, 13);
+            this.adLabel.TabIndex = 12;
+            this.adLabel.Text = "IKLAN";
+            this.adLabel.Visible = false;
+            // 
+            // progressBarSong
+            // 
+            this.progressBarSong.Location = new System.Drawing.Point(46, 288);
+            this.progressBarSong.Name = "progressBarSong";
+            this.progressBarSong.Size = new System.Drawing.Size(209, 10);
+            this.progressBarSong.TabIndex = 8;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(43, 263);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(45, 13);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Album : ";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(43, 239);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(45, 13);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Artis    : ";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(43, 217);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Judul  : ";
+            // 
+            // pbTrack
+            // 
+            this.pbTrack.Location = new System.Drawing.Point(71, 48);
+            this.pbTrack.Name = "pbTrack";
+            this.pbTrack.Size = new System.Drawing.Size(160, 160);
+            this.pbTrack.TabIndex = 4;
+            this.pbTrack.TabStop = false;
+            // 
+            // btnPause
+            // 
+            this.btnPause.Enabled = false;
+            this.btnPause.Location = new System.Drawing.Point(170, 319);
+            this.btnPause.Name = "btnPause";
+            this.btnPause.Size = new System.Drawing.Size(61, 23);
+            this.btnPause.TabIndex = 2;
+            this.btnPause.Text = "PAUSE";
+            this.btnPause.UseVisualStyleBackColor = true;
+            this.btnPause.Click += new System.EventHandler(this.btnPause_Click);
+            // 
+            // btnPlay
+            // 
+            this.btnPlay.Enabled = false;
+            this.btnPlay.Location = new System.Drawing.Point(87, 319);
+            this.btnPlay.Name = "btnPlay";
+            this.btnPlay.Size = new System.Drawing.Size(56, 23);
+            this.btnPlay.TabIndex = 1;
+            this.btnPlay.Text = "PLAY";
+            this.btnPlay.UseVisualStyleBackColor = true;
+            this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
+            // 
+            // btnConnect
+            // 
+            this.btnConnect.Location = new System.Drawing.Point(17, 17);
+            this.btnConnect.Name = "btnConnect";
+            this.btnConnect.Size = new System.Drawing.Size(274, 24);
+            this.btnConnect.TabIndex = 0;
+            this.btnConnect.Text = "Connect to Spotify PC";
+            this.btnConnect.UseVisualStyleBackColor = true;
+            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
+            // 
+            // lblTimeTrack
+            // 
+            this.lblTimeTrack.AutoSize = true;
+            this.lblTimeTrack.Location = new System.Drawing.Point(206, 301);
+            this.lblTimeTrack.Name = "lblTimeTrack";
+            this.lblTimeTrack.Size = new System.Drawing.Size(10, 13);
+            this.lblTimeTrack.TabIndex = 13;
+            this.lblTimeTrack.Text = "-";
+            // 
+            // lblJudul
+            // 
+            this.lblJudul.AutoSize = true;
+            this.lblJudul.Location = new System.Drawing.Point(84, 217);
+            this.lblJudul.Name = "lblJudul";
+            this.lblJudul.Size = new System.Drawing.Size(10, 13);
+            this.lblJudul.TabIndex = 14;
+            this.lblJudul.Text = "-";
+            // 
+            // lblArtis
+            // 
+            this.lblArtis.AutoSize = true;
+            this.lblArtis.Location = new System.Drawing.Point(84, 239);
+            this.lblArtis.Name = "lblArtis";
+            this.lblArtis.Size = new System.Drawing.Size(10, 13);
+            this.lblArtis.TabIndex = 15;
+            this.lblArtis.Text = "-";
+            // 
+            // lblAlbum
+            // 
+            this.lblAlbum.AutoSize = true;
+            this.lblAlbum.Location = new System.Drawing.Point(84, 263);
+            this.lblAlbum.Name = "lblAlbum";
+            this.lblAlbum.Size = new System.Drawing.Size(10, 13);
+            this.lblAlbum.TabIndex = 16;
+            this.lblAlbum.Text = "-";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.listView3);
+            this.groupBox4.Location = new System.Drawing.Point(13, 239);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(333, 366);
+            this.groupBox4.TabIndex = 22;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "3. Dapatkan Lagu Rekomendasimu";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 741);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.btnMoveLeft);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.txtHasil);
-            this.Controls.Add(this.listView3);
             this.Controls.Add(this.btnMoveRight);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tbPopularity)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbInstrument)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbEnergy)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbDance)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbAccoust)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbTrack)).EndInit();
+            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -549,29 +542,29 @@
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TrackBar tbPopularity;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TrackBar tbInstrument;
-        private System.Windows.Forms.TrackBar tbEnergy;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TrackBar tbDance;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TrackBar tbAccoust;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnMoveLeft;
-        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnSeed;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.CheckBox checkBoxPop;
-        private System.Windows.Forms.CheckBox checkBoxInstrument;
-        private System.Windows.Forms.CheckBox checkBoxEnergy;
-        private System.Windows.Forms.CheckBox checkBoxDance;
-        private System.Windows.Forms.CheckBox checkBoxAccoust;
         private System.Windows.Forms.Timer timerToken;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnPreference;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button btnConnect;
+        private System.Windows.Forms.ProgressBar progressBarSong;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pbTrack;
+        private System.Windows.Forms.Button btnPause;
+        private System.Windows.Forms.Button btnPlay;
+        private System.Windows.Forms.Label adLabel;
+        private System.Windows.Forms.Label lblTimeTrack;
+        private System.Windows.Forms.Label lblAlbum;
+        private System.Windows.Forms.Label lblArtis;
+        private System.Windows.Forms.Label lblJudul;
+        private System.Windows.Forms.GroupBox groupBox4;
     }
 }
 
