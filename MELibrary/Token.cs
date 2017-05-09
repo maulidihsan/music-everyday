@@ -12,7 +12,7 @@ namespace MELibrary
     class Token
     {
         private static string access_token;
-        private static string credentials = "{CLIENT ID : CLIENT SECRET}"; //input your API client credentials;
+        private static string credentials = "dfe0e6a795634db3a099e739de690f48:56addc812a8d40aabf7d318ea3b33f01"; //input your API client credentials;
         public static string GetAccessToken()
         {
             string return_value = string.Empty;

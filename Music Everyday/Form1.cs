@@ -1,31 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Newtonsoft.Json.Linq;
-using System.Net;
-using System.IO;
 using MELibrary;
+using SpotifyAPI.Local;
 
 namespace Music_Everyday
 {
     public partial class Form1 : Form
     {
         int counter = 3600;
-        private readonly SpotifyAPI.Local.SpotifyLocalAPI _spotify;
+        private readonly SpotifyLocalAPI _spotify;
         private SpotifyAPI.Local.Models.Track _currentTrack;
         private string _currentUrlTrack;
+        DBHelper db = new DBHelper();
         public Form1()
         {
             InitializeComponent();
-            _spotify = new SpotifyAPI.Local.SpotifyLocalAPI();
+            _spotify = new SpotifyLocalAPI();
             _spotify.OnTrackTimeChange += _spotify_OnTrackTimeChange;
+            updateDB();
+            
         }
 
 
@@ -82,10 +76,6 @@ namespace Music_Everyday
         private void btnSeed_Click(object sender, EventArgs e)
         {
             listView3.Items.Clear();
-            //if (!timerToken.Enabled)
-            //{
-                
-            //}
             string query = string.Empty;
             foreach (ListViewItem item in listView2.Items)
             {
@@ -124,13 +114,13 @@ namespace Music_Everyday
         
         public void Connect()
         {
-            if (!SpotifyAPI.Local.SpotifyLocalAPI.IsSpotifyRunning())
+            if (!SpotifyLocalAPI.IsSpotifyRunning())
             {
                 MessageBox.Show(@"Spotify isn't running!");
                 return;
             }
-
-            bool sukses = _spotify.Connect();
+            bool sukses;
+            try { sukses = _spotify.Connect();} catch { sukses = false; }
             if (sukses)
             {
                 btnConnect.Text = @"Sukses menyambungkan ke Spotify PC";
@@ -138,6 +128,9 @@ namespace Music_Everyday
                 _spotify.ListenForEvents = true;
                 btnPlay.Enabled = true;
                 btnPause.Enabled = true;
+                SpotifyAPI.Local.Models.StatusResponse status = _spotify.GetStatus();
+                if (status.Track != null)
+                    UpdateTrack(status.Track, "");
             }
             else
             {
@@ -187,13 +180,21 @@ namespace Music_Everyday
             {
                 ListViewItem currentTrack = listView1.SelectedItems[0];
                 track = currentTrack.SubItems[3].Text;
-
+                currentTrack.Selected = false;
             }
 
-            if (listView3.SelectedItems.Count > 0)
+            else if (listView3.SelectedItems.Count > 0)
             {
                 ListViewItem currentTrack = listView3.SelectedItems[0];
                 track = currentTrack.SubItems[3].Text;
+                currentTrack.Selected = false;
+            }
+
+            else if (listView4.SelectedItems.Count > 0)
+            {
+                ListViewItem currentTrack = listView4.SelectedItems[0];
+                track = currentTrack.SubItems[3].Text;
+                currentTrack.Selected = false;
             }
 
             if (_currentUrlTrack != track)
@@ -216,7 +217,7 @@ namespace Music_Everyday
             await _spotify.Pause();
         }
 
-        private void _spotify_OnTrackTimeChange(object sender, SpotifyAPI.Local.TrackTimeChangeEventArgs e)
+        private void _spotify_OnTrackTimeChange(object sender, TrackTimeChangeEventArgs e)
         {
             if (InvokeRequired)
             {
@@ -235,6 +236,50 @@ namespace Music_Everyday
             if (secs.Length < 2)
                 secs = "0" + secs;
             return mins + ":" + secs;
+        }
+
+        private void btnAddPlaylist_Click(object sender, EventArgs e)
+        {
+            Lagu input = new Lagu();
+            while (listView3.SelectedItems.Count > 0)
+            {
+                ListViewItem item = listView3.SelectedItems[0];
+                input.Artis = item.SubItems[0].Text;
+                input.Judul = item.SubItems[1].Text;
+                input.Album = item.SubItems[2].Text;
+                input.TrackID = item.SubItems[3].Text;
+                try
+                {
+                    db.insertPlaylist(input);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+                item.Selected = false;
+            }
+            updateDB();
+        }
+
+        private void updateDB()
+        {
+            listView4.Items.Clear();
+            try
+            {
+                List<Lagu> playlist = db.getPlaylist();
+                foreach (Lagu lagu in playlist)
+                {
+                    ListViewItem list = new ListViewItem(lagu.Artis);
+                    list.SubItems.Add(lagu.Judul);
+                    list.SubItems.Add(lagu.Album);
+                    list.SubItems.Add(lagu.TrackID);
+                    listView4.Items.Add(list);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Gagal Mendapatkan Data");
+            }
         }
     }
 }
